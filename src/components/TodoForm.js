@@ -4,8 +4,8 @@ import { useState } from 'react';
 function TodoForm() {
     const [todos,setTodos]=useState([])//Vetor para guardar informacoes//
   const[todo,setTodo]=useState("")
-  function handleSubmit(e){
-    e.preventDefault()
+  function handleSubmit(event){
+    event.preventDefault()
     const newTodo={
         id:new Date().getTime(),
         text: todo,
@@ -21,9 +21,10 @@ function TodoForm() {
         <h1>Todo List App</h1>
     <form onSubmit={handleSubmit}>
     
-      <input type='text'/>
+      <input type='text'onChange={(event)=> setTodo(event.target.value)} value={todo}/>
       <button type='onSubmit'>Adicionar Todo</button>
     </form>
+    
     </div>
   )
 }
