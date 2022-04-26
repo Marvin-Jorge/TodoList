@@ -4,6 +4,9 @@ import { useState } from 'react';
 function TodoForm() {
     const [todos,setTodos]=useState([])//Vetor para guardar informacoes//
   const[todo,setTodo]=useState("")
+  
+  const [todoEditing, setTodoEditing] =useState(null);
+  const [editingText, setEditingText] =useState("");
   function handleSubmit(event){
     event.preventDefault()
     const newTodo={
@@ -21,7 +24,17 @@ function TodoForm() {
 const updatedTodos = [...todos].filter((todo)=>todo.id !==id);
 setTodos(updatedTodos)
    } }
-
+   function editarTodo(id) {
+    const updatedTodos = [...todos].map((todo) => {
+      if (todo.id === id) {
+        todo.text = editingText;
+      }
+      return todo;
+    });
+    setTodos(updatedTodos);
+    setTodoEditing(null);
+    setEditingText("")
+  }
 
   return (
     <div className="Todo-App">
@@ -34,7 +47,8 @@ setTodos(updatedTodos)
     {todos.map((todo)=><div key={todo.id}>
     <div>{todo.text}</div>)
     <button onClick={() => eliminarTodo(todo.id)}>Eliminar</button>
-  
+    {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
+  > Editar</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
   </div>)}
     
 </div>
