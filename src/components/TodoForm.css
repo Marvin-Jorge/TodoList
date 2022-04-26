@@ -1,7 +1,9 @@
 h1 {
     text-align: center;
+    color: blue;
   }
   .Todo-App {
     width: 500px;
     margin: 60px auto;
+    align-items: center;
   }
