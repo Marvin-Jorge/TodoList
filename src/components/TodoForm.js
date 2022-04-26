@@ -44,8 +44,9 @@ setTodos(updatedTodos)
       <input type='text'onChange={(event)=> setTodo(event.target.value)} value={todo}/>
       <button type='onSubmit'>Adicionar Todo</button>
     </form>
-    {todos.map((todo)=><div key={todo.id}>
-    <div>{todo.text}</div>)
+    {todos.map((todo)=><div key={todo.id}className="todo">
+        
+    <div>{todo.text}</div>
     <button onClick={() => eliminarTodo(todo.id)}>Eliminar</button>
     {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
   > Editar</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
