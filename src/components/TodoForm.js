@@ -53,16 +53,29 @@ setTodos(updatedTodos)
       <input type='text'onChange={(event)=> setTodo(event.target.value)} value={todo}/>
       <button type='onSubmit'>Adicionar Todo</button>
     </form>
-    {todos.map((todo)=><div key={todo.id}className="todo">
-        <input  type="checkbox" id="completed"checked={todo.completed} onChange={() => Completo(todo.id)}/>
-        
-    <div>{todo.text}</div>
-    <br></br>
+    {todos.map((todo)=> <div key={todo.id}className="todo">
+<div className="todo-text">
+<input  type="checkbox" id="completed"checked={todo.completed} onChange={() => Completo(todo.id)}
+/>
+  {todoEditing===todo.id ? (
+    <input type="text" onChange={(e)=> setEditingText(e.target.value)}
+    value={editingText}
+    />
+
+  ):(<div>{todo.text}</div>)}
+</div>
+  
+  <br></br>
   <div className="todo-actions">
-    <button onClick={() => eliminarTodo(todo.id)}>Eliminar</button>
-    {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
-  > Editar</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
+  
+  <button onClick={() => eliminarTodo(todo.id)}>Delete</button>
+  
+  
+  {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
+  >Submit Edit</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
+  
   </div>
+  
   </div>)}
     
 </div>
@@ -70,4 +83,9 @@ setTodos(updatedTodos)
 };
 
 
+
 export default TodoForm
+
+
+
+
