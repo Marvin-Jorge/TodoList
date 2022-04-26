@@ -24,7 +24,7 @@ function TodoForm() {
       <input type='text'onChange={(event)=> setTodo(event.target.value)} value={todo}/>
       <button type='onSubmit'>Adicionar Todo</button>
     </form>
-    
+    {todos.map((todo)=><div key={todo.id} className="todo">
     </div>
   )
 }
