@@ -26,7 +26,7 @@ function TodoForm() {
     setTodo("")
   }
   function eliminarTodo(id){
-    if(window.confirm("Tens a certeza")){
+    if(window.confirm("Tens a certeza queres Eliminar a Todo?")){
 const updatedTodos = [...todos].filter((todo)=>todo.id !==id);
 setTodos(updatedTodos)
    } }
