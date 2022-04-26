@@ -7,3 +7,7 @@ h1 {
     margin: 60px auto;
     align-items: center;
   }
+  .todo {
+    display: flex;
+    flex-direction: column;
+  }

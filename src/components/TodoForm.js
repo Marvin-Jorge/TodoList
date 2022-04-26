@@ -57,9 +57,12 @@ setTodos(updatedTodos)
         <input  type="checkbox" id="completed"checked={todo.completed} onChange={() => Completo(todo.id)}/>
         
     <div>{todo.text}</div>
+    <br></br>
+  <div className="todo-actions">
     <button onClick={() => eliminarTodo(todo.id)}>Eliminar</button>
     {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
   > Editar</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
+  </div>
   </div>)}
     
 </div>
