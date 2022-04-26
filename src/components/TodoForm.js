@@ -16,6 +16,11 @@ function TodoForm() {
         
         
       }
+      if(todo.length<3){
+        setError()
+        window.alert("Escreve pelo menos uma palavra de 3 letras")
+        return false
+      }
     setTodos([...todos].concat(newTodo))
     setTodo("")
   }
@@ -72,7 +77,7 @@ setTodos(updatedTodos)
   
   
   {todoEditing===todo.id ? ( <button onClick={()=> editarTodo(todo.id)}
-  >Submit Edit</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
+  > Editar</button>):(<button onClick={() => setTodoEditing(todo.id)}>Editar Todo</button>)}
   
   </div>
   
