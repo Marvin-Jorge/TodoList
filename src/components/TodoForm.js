@@ -1,7 +1,8 @@
 import React from 'react'
 import './TodoForm.css';
 import { useState } from 'react';
-function TodoForm() {
+function TodoForm() { 
+    const [error,setError]=useState(null)
     const [todos,setTodos]=useState([])//Vetor para guardar informacoes//
    const[todo,setTodo]=useState("")
   
