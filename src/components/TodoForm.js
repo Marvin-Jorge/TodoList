@@ -16,6 +16,13 @@ function TodoForm() {
     setTodos([...todos].concat(newTodo))
     setTodo("")
   }
+  function eliminarTodo(id){
+    if(window.confirm("Tens a certeza")){
+const updatedTodos = [...todos].filter((todo)=>todo.id !==id);
+setTodos(updatedTodos)
+   } }
+
+
   return (
     <div className="Todo-App">
         <h1>Todo List App</h1>
@@ -24,10 +31,15 @@ function TodoForm() {
       <input type='text'onChange={(event)=> setTodo(event.target.value)} value={todo}/>
       <button type='onSubmit'>Adicionar Todo</button>
     </form>
-    {todos.map((todo)=><div key={todo.id}>{todo.text}</div>)}
-    </div>
-)
+    {todos.map((todo)=><div key={todo.id}>
+    <div>{todo.text}</div>)
+    <button onClick={() => eliminarTodo(todo.id)}>Eliminar</button>
+  
+  </div>)}
+    
+</div>
+  )
+};
 
-}
 
 export default TodoForm
