@@ -17,7 +17,7 @@ app.post("/adicionar",(req,res)=>{
 
 const text=req.body;
 
-let mysql="INSERT INTO todobase(todobasetext)newTodo(?)";
+let mysql="INSERT INTO todobase(todobasetext)values(?)";
 db.query(mysql,[text],(err,result)=>{
     console.log(err);
 })
