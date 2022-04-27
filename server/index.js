@@ -23,10 +23,10 @@ db.query(mysql,[text],(err,result)=>{
 })
 })
 app.put("/edit", (req, res) => {
-    const { id } = req.body;
-    const { name } = req.body;
-    const { cost } = req.body;
-    const { category } = req.body;
+    const id  = req.body;
+    const  text  = req.body;
+    
+    
     let mysql = "UPDATE todobase SET text = ?, WHERE id = ?";
     db.query(mysql, [id,text], (err, result) => {
       if (err) {
