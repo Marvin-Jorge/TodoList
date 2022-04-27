@@ -37,7 +37,7 @@ CREATE TABLE `todobase` (
 
 LOCK TABLES `todobase` WRITE;
 /*!40000 ALTER TABLE `todobase` DISABLE KEYS */;
-INSERT INTO `todobase` VALUES ('?');
+INSERT INTO `todobase` VALUES ('?','?');
 /*!40000 ALTER TABLE `todobase` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
